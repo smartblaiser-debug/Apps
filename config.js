@@ -45,3 +45,7 @@ new MutationObserver(function () {
     if (!x.hasAttribute('capture') && x.hasAttribute('accept')) x.removeAttribute('accept');
   });
 }).observe(document.documentElement, { childList: true, subtree: true });
+window.addEventListener('load', function () {
+  var op = window.prac, oh = window.home, mk = null, iv = null;
+  function fmt(l) { l = Math.max(0, Math.floor(l / 1000)); return ('0' + Math.floor(l / 60)).slice(-2) + ':' + ('0' + l % 60).slice(-2); }
+  function tick() { var l = mk ? mk.end - Date.now() : 0, t = document.getElementById('tm'); if (t) t.textContent = fmt(l); if (l
