@@ -40,3 +40,8 @@ window.addEventListener('load', function () {
     });
   };
 });
+new MutationObserver(function () {
+  document.querySelectorAll('input[type=file]').forEach(function (x) {
+    if (!x.hasAttribute('capture') && x.hasAttribute('accept')) x.removeAttribute('accept');
+  });
+}).observe(document.documentElement, { childList: true, subtree: true });
